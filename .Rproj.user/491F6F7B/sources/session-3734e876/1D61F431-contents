@@ -1,0 +1,26 @@
+# Given data
+y <- c(105, 69, 86, 100, 82, 111, 104, 110, 87, 108, 87, 90, 94, 113, 112, 98, 80, 97, 95, 111, 114, 89, 95, 126, 98)
+
+# Calculate sample mean and standard deviation
+sample_mean <- mean(y)
+sample_sd <- sd(y)
+sample_size <- length(y)
+
+# Degrees of freedom for t-distribution
+df <- sample_size - 1
+
+# Calculate t-critical value for a 90% confidence interval
+t_critical <- qt(0.95, df)
+
+# Calculate margin of error
+margin_of_error <- t_critical * (sample_sd / sqrt(sample_size))
+
+# Calculate confidence interval bounds
+lower_bound <- sample_mean - margin_of_error
+upper_bound <- sample_mean + margin_of_error
+
+print(lower_bound)
+print(upper_bound)
+
+# Print the confidence interval
+print(paste("90% Confidence Interval (t-distribution): [", lower_bound, ",", upper_bound, "]"))

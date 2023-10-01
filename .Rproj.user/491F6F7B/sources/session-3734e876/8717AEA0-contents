@@ -1,0 +1,15 @@
+plot(1, type="n", xlab="", ylab="", xlim=c(-1.5, 1.5), ylim=c(-1.5, 1.5))
+
+# Draw flower petals
+for (i in 1:12) {
+  angle <- i * pi / 6
+  petal_length <- 1.2 + 0.3 * cos(4 * angle)
+  x <- petal_length * sin(angle)
+  y <- petal_length * cos(angle)
+  points <- cbind(x, y)
+  points <- rbind(points, c(0, 0))
+  polygon(points, col="pink", border="red")
+}
+
+# Draw flower center
+points(0, 0, col="yellow", pch=16, cex=2.5)
