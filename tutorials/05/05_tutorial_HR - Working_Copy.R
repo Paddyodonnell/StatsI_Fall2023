@@ -48,6 +48,8 @@ wb <- wb(country=c("AF","BRA","ITA","NGA","SWE","UGA"),
                      "SH.DYN.MORT"), # Mortality rate, under-5 (per 1,000 live births) 
          startdate = 2000, enddate = 2020)
 
+View(wb)
+
 # Data formats--Wide and long
 # https://www.statology.org/long-vs-wide-data/
 
@@ -57,8 +59,12 @@ wb_re <- reshape(wb[, c("country","iso3c","date","indicatorID","value")], # df
                  idvar = c("country","date","iso3c"), # Identifiers for rows
                  direction = "wide")
 
+View(wb_re)
+
 # Load Quality of Government data
 qog <- read_csv("https://www.qogdata.pol.gu.se/data/qog_bas_ts_jan23.csv")
+
+View(qog)
 
 # How can we combine data from different sources?
 # https://guides.nyu.edu/quant/merge
@@ -70,6 +76,8 @@ df <- merge(wb_re, # Left df
             by.y=c("year","ccodealp"), # Merge variables in right
             all.x=TRUE, # Merge operation, only keep left
             sort=FALSE) # Do not sort observations
+
+View(df)
 
 # Rename columns
 names(df)
@@ -149,10 +157,14 @@ df_na$income_cat[df_na$gdp_per_cap>756.8] <- 1 # Place step by step
 df_na$income_cat[df_na$gdp_per_cap>3171.6] <- 2
 df_na$income_cat[df_na$gdp_per_cap>31768.3] <- 3
 
+View(df_na)
+
 # Convert into factor
 typeof(df_na$income_cat)
 df_na$income_cat <- factor(df_na$income_cat, 
                            labels = c("low","medium_low","medium_high","high"))
+
+View(df_na)
 
 # Re-coding variables, in tidyverse
 # Create categorical income variable
@@ -162,6 +174,8 @@ df_na <- mutate(df_na, income_cat2=cut(gdp_per_cap,
                                        breaks=quantile(df_na$gdp_per_cap),
                                        labels=c("low","medium_low","medium_high","high")))
 typeof(df_na$income_cat)
+
+View(df_na)
 
 # Step by step: 
 cut(df_na$gdp_per_cap,breaks=c(0,600,800,Inf)) # Define breaks
@@ -235,6 +249,10 @@ scatter
 model <- lm(mort ~ gdp_per_cap, data=df_na)
 summary(model)
 
+View(df_na)
+
+View(df_na)
+
 # Re-scale income
 df_na$gdp_per_cap_1000 <- df_na$gdp_per_cap/1000
 model <- lm(mort ~ gdp_per_cap_1000, data=df_na)
@@ -248,3 +266,4 @@ stargazer(model)
 # Fit model
 model <- lm(mort ~ democracy, data=df_na)
 summary(model)
+

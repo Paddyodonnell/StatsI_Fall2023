@@ -57,7 +57,7 @@ getwd()
 # Born in country (brncntr), 1: Yes, 2: No
 
 # Only include Ireland and relevant variables. 
-df <- read.csv("../../datasets/ESS10.csv")
+df <- read.csv("C:/Users/paddy/OneDrive/Documents/GitHub/StatsI_Fall2023/tutorials/ESS10/ESS10.csv")
 df_s <- df[df$cntry=="IE", c("euftf","edlvdie","eduyrs","hinctnta","trstplt","imwbcnt","gndr","agea","brncntr")]
 View(df_s)
 

@@ -36,8 +36,8 @@ lapply(c("car"),  pkgTest)
 #(a) Calculate the χ2 test statistic by hand/manually 
 #(even better if you can do ”by hand”in R).
 
-#H0: The variables are statistically independent
-#Ha: The variables are statistically dependent
+#H0: The variables are statistically independent.
+#Ha: The variables are statistically dependent.
 
 #F0: The observed frequency, the raw count
 #Fe: The expected frequency, what we would expect for the independent samples
@@ -110,7 +110,7 @@ pchisq(test.result, df=2, lower.tail = FALSE)
 #p-value = 0.1502306
 
 #As the level of significance α = 0.1, and our test result is over 0.1
-#we can conclude that our results are statistically significant.
+#We cannot reject the null hypothesis.
 
 #(c)Calculate the standardized residuals for each cell and put them in the table below.
 
@@ -129,26 +129,46 @@ print(sr4)
 print(sr5)
 print(sr6)
 
+#Plot the standarsised residuals in the table.
 {sr_matrix <- matrix(c(sr1,sr2,sr3,sr4,sr5,sr6), nrow = 2, byrow = TRUE)
-df <- data.frame(sr_matrix)
-colnames(df) <- c("Not Stopped", "Bribe Requested", "Stopped/given warning")
-row.names(df) <- c("Upper class", "Lower class")
-View(df)
-} 
-
-{colnames(sr_matrix) <- c("Not Stopped", "Bribe Requested", "Stopped/given warning")
-row.names(sr_matrix) <- c("Upper class", "Lower class")
-View(sr_matrix)
+  colnames(sr_matrix) <- c("Not Stopped", "Bribe Requested", "Stopped/given warning")
+  row.names(sr_matrix) <- c("Upper class", "Lower class")
+  View(sr_matrix)
+}
+#As a data frame.
+{df <- data.frame(sr_matrix)
+  colnames(df) <- c("Not Stopped", "Bribe Requested", "Stopped/given warning")
+  row.names(df) <- c("Upper class", "Lower class")
+  View(df)
 }
 
-observed_data <- matrix(c(14, 6, 7, 7, 7, 1), nrow = 2, byrow = TRUE)
+############################################################################
+#Not by hand.
 
+#Write table into R with code.
+{observed_data <- matrix(c(14, 6, 7, 7, 7, 1), nrow = 2, byrow = TRUE)
+colnames(observed_data) <- c("Not Stopped", "Bribe Requested", "Stopped/given warning")
+row.names(observed_data) <- c("Upper class", "Lower class")
+}
+
+#View the table to check it is correct.
 View(observed_data)
 
-chisq.test(observed_data)
+#Run the chi squared test.
+chi_test <- chisq.test(observed_data)
 
+#Extract the required data.
+ls(chi_test)
+chi_test$observed
+chi_test$expected
+chi_test$residuals
+chi_test$stdres
 
-#############################################################
+#The results match the by hand method.
+
+plot(chi_test$observed ~ chi_test$expected)
+
+##########################################################################
 ###############
 #Question 2.
 ###############
@@ -161,10 +181,12 @@ str(west_bengal_data)
 #(a)
 #State null and alternative hypothesis
 
-#Null hypothesis: Women do not promote different policies than men.
-#Alternative hypothesis: women promote different policies than men.
+#Null hypothesis: The reservation policy has no effect on number of new or repaired drinking water facilities.
+#Alternative hypothesis: The reservation policy does have an effect on number of new or repaired drinking water facilities.
 
-#By hand bivariate regression analysis.
+######################################################################
+#DOES NOT APPLY, JUST PRACTICE.
+#By hand bivariate regression analysis, pearson.
 #First calculate the correlation coefficient, test statistic (t_stat), and p-value.
 {wbd_matrix <- as.matrix(west_bengal_data)
 r <- cov(wbd_matrix)[3,6]/(sd(wbd_matrix[,3])*sd(wbd_matrix[,6]))
@@ -179,24 +201,81 @@ print(p_value)
 #r is the correlation coefficient, and n is the number of observations.
 #Code taken from Jeffery Ziegler's slides on bivariate regression.
 
-#Calculate the p-value.
-{p_value <- 2*pt(t_stat,n-2,lower.tail=FALSE)
-print(p_value)
-}
-
-#More efficiently
+#Not by hand.
 #find r, the correlation coefficient.
 cor(wbd_matrix[,3], wbd_matrix[,6], method = "pearson")
 #Hypothesis test.
 cor.test(wbd_matrix[,3], wbd_matrix[,6])
 
-plot(west_bengal_data$female, west_bengal_data$water)
+#This does not apply because the analysis is being done on data with
+#a binary/categorical independent variable.
+
+###############################################################################
+
+#Fitting a linear model, water facilities against reservation policy.
+
+model1 <- lm(water ~ reserved, data=west_bengal_data)
+summary(model1)
+
+#Test statistic from intercept of model1.
+(14.738-0)/2.286
+
+#Test statistic.
+(9.252-0)/3.948
+
+#confidence interval (CI) for the slope (beta) of reservation policy.
+#Beta(hat) +or- (t-score*SE)
+
+confint(model1, "reserved", level=0.95)
+
+9.252+(1.97*3.948)
+9.252-(1.97*3.948)
+
+#CI = (1.47444, 17.02956)
+
+#Export model1 as LaTex code.
+if(!require(stargazer)){
+  install.packages("stargazer")
+  library(stargazer)
+}
+stargazer(model1)
+
+###############################################################################
+
+#Binary independent variable.
+
+#The predicted value of Y(hat) is equal to the level of significance plus the slope multiplied
+#by the state of the binary independent variable (0 or 1).
+
+#Model for reservation policy.
+14.738+(9.252*1)
+#Model for villages without the reservation policy.
+14.738+(9.252*0)
+
+###########################################################################
+#Making plots of the data.
+
+plot(west_bengal_data$reserved, west_bengal_data$water)
 
 if(!require(car)){
   install.packages("car")
   library(car)
 }
-scatterplot(west_bengal_data$female, west_bengal_data$water)
+
+if(!require(ggplot2)){
+  install.packages("ggplot2")
+  library(car)
+}
+
+ggplot(west_bengal_data, aes(x = reserved, y = water)) +
+  geom_point() +  
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  labs(x = "Reservation Policy (0 = Not Reserved, 1 = Reserved)",
+       y = "Number of Water Facilities",
+       title = "Relationship between Reservation Policy and Water Facilities")+
+  theme_minimal() #Code from Hannah Frank's tutorial.
+
+scatterplot(west_bengal_data$reserved, west_bengal_data$water)
 
 
 
