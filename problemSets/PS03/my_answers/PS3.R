@@ -17,10 +17,15 @@ detachAllPackages()
 
 # load libraries
 pkgTest <- function(pkg){
-  new.pkg <- pkg[!(pkg %in% installed.packages()[,  "Package"])]
+  new.pkg <- pkg[!(pkg %in% installed.packages(dplyr)[,  "Package"])]
   if (length(new.pkg)) 
     install.packages(new.pkg,  dependencies = TRUE)
   sapply(pkg,  require,  character.only = TRUE)
+}
+
+if(!require(stargazer)){
+  install.packages("stargazer")
+  library(stargazer)
 }
 
 # here is where you load any necessary packages
@@ -29,10 +34,6 @@ pkgTest <- function(pkg){
 
 # set wd for current folder
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-
-
-lapply(c("tidyverse"),  pkgTest)
-
 
 # read in data
 inc.sub <- read.csv("https://raw.githubusercontent.com/ASDS-TCD/StatsI_Fall2023/main/datasets/incumbents_subset.csv")
@@ -53,6 +54,8 @@ print(model1)
 #Summary of the above model, for reference.
 summary(model1)
 
+stargazer(model1)
+
 #P2
 #Plot, using base R.
 {plot(voteshare ~ difflog, data = inc.sub, col = 'black')+
@@ -64,8 +67,6 @@ summary(model1)
 #P3
 #Model1 residuals, saved as an object.
 model1_residuals <- resid(model1)
-View(model1_residuals)
-as.data.frame(model1_residuals)
 View(model1_residuals)
 
 #P4
@@ -93,12 +94,14 @@ print(model2)
 
 summary(model2)
 
+stargazer(model2)
+
 #P2.
-plot(presvote ~ difflog, data = inc.sub, col = 'black')+
+{plot(presvote ~ difflog, data = inc.sub, col = 'black')+
   abline(model2, col = 'red', lwd = 3)+
   grid()+
   title(main = 'Scatter Plot Presvote Vs. Difflog', y = "presvote", x = "difflog")
-
+}
 #P3
 model2_residuals <- resid(model2)
 
@@ -118,6 +121,8 @@ print(model3)
 
 summary(model3)
 
+stargazer(model3)
+
 #P2
 {plot(voteshare ~ presvote, data = inc.sub, col = 'black')+
   abline(model3, col = 'red', lwd = 3)+
@@ -134,15 +139,20 @@ summary(model3)
 
 #P1
 
-df1 <- as.data.frame(model1_residuals)
+#Put the standard residuals from Questions 1 and 2 into a dataframe.
+{df1 <- as.data.frame(model1_residuals)
 df2 <- as.data.frame(model2_residuals)
-df3 <- merge(df1, df2)
+list_df3 <- c(df1, df2)
+df3 <- as.data.frame(list_df3)
+}
 
-#View df3 to check it has merged correctly.
 View(df3)
+
 
 model4 <- lm(model1_residuals ~ model2_residuals, data = df3)
 print(model4)
+
+stargazer(model4)
 
 summary(model4)
 
@@ -155,9 +165,45 @@ summary(model4)
 }
 
 #P3
-(-7.806e-18)+(1.427e-17)*(-0.0004227622)
+(-5.934e-18)+(2.569e-01)*(X1)
 
+##############################################################
+#Q5
 
+#P1
 
+model5 <- lm(voteshare ~ difflog + presvote, data = inc.sub)
+print(model5)
 
+summary(model5)
+
+(0.44864)+(0.03554)*(X1)+(0.25688)*(X2)
+
+cor(model2_residuals, inc.sub$presvote)
+
+print(model4)
+print(model5)
+
+r1 <- resid(model4)
+r2 <- resid(model5)
+
+summary(r1)
+summary(r2)
+
+df_r1 <- as.data.frame(r1)
+df_r2 <- as.data.frame(r2)
+
+View(df_r1)
+View(df_r2)
+
+list_df_r1r2 <- c(df_r1, df_r2)
+df_r1r2 <- as.data.frame(list_df_r1r2)
+
+View(df_r1r2)
+
+cor(r1, r2)
+cor(df_r1, df_r2)
+
+View(model2_residuals)
+View(inc.sub$presvote)
 

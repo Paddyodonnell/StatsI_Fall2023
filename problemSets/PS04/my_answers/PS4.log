@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.9.8)  2 DEC 2023 15:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.9.8)  3 DEC 2023 18:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./PS3.tex
-(PS3.tex
+**./PS4.tex
+(PS4.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-03-30>
 (C:\Users\paddy\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -856,40 +856,27 @@ tex.def
 File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count336
 \l__pdf_internal_box=\box76
-) (PS3.aux
+) (PS4.aux)
+\openout1 = `PS4.aux'.
 
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-)
-\openout1 = `PS3.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
 
 (C:\Users\paddy\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -916,26 +903,28 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 68.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 69.
 
  (C:\Users\paddy\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 68.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 69.
 
 
 (C:\Users\paddy\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package xypdf Info: Line width: 0.47998pt on input line 68.
-Package hyperref Info: Link coloring OFF on input line 68.
+Package xypdf Info: Line width: 0.47998pt on input line 69.
+Package hyperref Info: Link coloring OFF on input line 69.
 
-(PS3.out) (PS3.out)
+(PS4.out) (PS4.out)
 \@outlinefile=\write7
-\openout7 = `PS3.out'.
+\openout7 = `PS4.out'.
 
 \c@lstlisting=\count343
+ [1
 
+{C:/Users/paddy/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 (C:\Users\paddy\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
@@ -945,80 +934,49 @@ File: lstlang2.sty 2023/02/27 1.9 listings language file
 (C:\Users\paddy\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty
 File: lstlang3.sty 2023/02/27 1.9 listings language file
 )
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 9
-1.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 1
+06.
 
 (C:\Users\paddy\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
 File: omlcmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 91.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 106.
 
-[1
+[2] [3] [4] [5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
-{C:/Users/paddy/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-27.
-
-(C:\Users\paddy\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
-File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 127.
-<SP_voteshare_v_difflog.pdf, id=24, 481.8pt x 445.665pt>
-File: SP_voteshare_v_difflog.pdf Graphic file (type pdf)
-<use SP_voteshare_v_difflog.pdf>
-Package pdftex.def Info: SP_voteshare_v_difflog.pdf  used on input line 137.
-(pdftex.def)             Requested size: 352.31625pt x 325.90396pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2] [3 <./SP_voteshare_v_difflog.pdf>] [4] [5]
-<SP_presvote_v_difflog.pdf, id=74, 481.8pt x 451.6875pt>
-File: SP_presvote_v_difflog.pdf Graphic file (type pdf)
-<use SP_presvote_v_difflog.pdf>
-Package pdftex.def Info: SP_presvote_v_difflog.pdf  used on input line 247.
-(pdftex.def)             Requested size: 352.31625pt x 330.30807pt.
- [6 <./SP_presvote_v_difflog.pdf>] [7] [8]
-<SP_voteshare_v_presvote.pdf, id=117, 481.8pt x 456.70625pt>
-File: SP_voteshare_v_presvote.pdf Graphic file (type pdf)
-<use SP_voteshare_v_presvote.pdf>
-Package pdftex.def Info: SP_voteshare_v_presvote.pdf  used on input line 330.
-(pdftex.def)             Requested size: 352.31625pt x 333.97816pt.
- [9 <./SP_voteshare_v_presvote.pdf>] [10] [11] [12]
-<SP_m1r_v_m2r.pdf, id=173, 481.8pt x 471.7625pt>
-File: SP_m1r_v_m2r.pdf Graphic file (type pdf)
-<use SP_m1r_v_m2r.pdf>
-Package pdftex.def Info: SP_m1r_v_m2r.pdf  used on input line 410.
-(pdftex.def)             Requested size: 352.31625pt x 344.98843pt.
- [13 <./SP_m1r_v_m2r.pdf>] [14] [15]
-Overfull \hbox (2.5859pt too wide) in paragraph at lines 516--517
-\OT1/cmr/m/n/12 at: https://www.statology.org/how-to-interpret-residual-standar
-d-error/ (Ac-cessed: 19
  []
 
 
-Overfull \hbox (97.66792pt too wide) in paragraph at lines 517--518
-[]\OT1/cmr/m/n/12 Residual Stan-dard Er-ror (RSE) (2018). Avail-able at: https:
-//www.youtube.com/watch?v=rLwn7OKcoqk
+Underfull \hbox (badness 10000) in paragraph at lines 282--284
+
  []
 
-[16] (PS3.aux)
+[8] [9] [10] [11]
+Overfull \hbox (3.38678pt too wide) in paragraph at lines 464--465
+\OT1/cmr/m/n/12 29 Novem-ber. Avail-able at: https://vitalflux.com/linear-regre
+ssion-t-test-formula-
+ []
 
-LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `PS3.out' has not changed.
+Overfull \hbox (34.24525pt too wide) in paragraph at lines 470--471
+\OT1/cmr/m/n/12 Avail-able at: https://www.sciencedirect.com/topics/mathematics
+/population-standard-
+ []
+
+[12] [13] (PS4.aux)
+Package rerunfilecheck Info: File `PS4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27180 strings out of 476331
- 482751 string characters out of 5787766
- 1912660 words of memory out of 5000000
- 47022 multiletter control sequences out of 15000+600000
- 524332 words of font info for 82 fonts, out of 8000000 for 9000
+ 27041 strings out of 476331
+ 480323 string characters out of 5787766
+ 1886660 words of memory out of 5000000
+ 46961 multiletter control sequences out of 15000+600000
+ 524846 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,11n,89p,3237b,2166s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,11n,89p,3237b,2152s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\paddy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk> <C:\Users\paddy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\tcrm1200.pk><C:/Users/paddy/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -1035,11 +993,13 @@ mr7.pfb><C:/Users/paddy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmr8.pfb><C:/Users/paddy/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb><C:/Users/paddy/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmsy8.pfb><C:/Users/paddy/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/paddy/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PS3.pdf (16 pages, 960899 bytes).
+onts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/paddy/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/paddy/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/paddy/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on PS4.pdf (13 pages, 229345 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 109 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 185 PDF objects out of 1000 (max. 8388607)
+ 32 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
